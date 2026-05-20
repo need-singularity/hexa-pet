@@ -6,7 +6,6 @@
 // it must NEVER stand alone as verification, must NEVER be applied to
 // external entities (e.g. Hill's, Royal Canin, Purina, Zoetis, Boehringer,
 // Elanco, Petco, Chewy — pet-food/pharma/retail brands use THEIR OWN
-// specs, NOT lattice-fit per raw#10 C3), and must be paired with at
 // least one real-limits anchor (see real_limits_anchor.hexa).
 //
 // This script: native-lattice arithmetic identities only. Pass iff arithmetic
@@ -28,7 +27,6 @@ fn main() {
     println("  policy: LATTICE_POLICY §1.3 rule 1 — aux check; never sole verification")
     println("  policy: LATTICE_POLICY §1.3 rule 4 — NEVER applied to external entities")
     println("          (Hill's, Royal Canin, Purina, Zoetis, Boehringer, Elanco,")
-    println("           Petco, Chewy use their OWN specs — raw#10 C3)")
     println("")
 
     let n = 6

@@ -26,7 +26,6 @@ requires:
   - to: materials/recycling
     alien_min: 7
     reason: kraft + PE liner pouch end-of-life — multi-layer separability per ISO 14021 Type II
-upgraded: "2026-05-01 mk1 PHYSICAL-LIMIT (10): all 5 falsifier-axis targets re-derived from physical-limit physics (AAFCO 2024 Dog Food Adult Maintenance Profile / FDA 21 CFR 501.22 / Atwater 1900 calorific factors / glycemic-index physiology / Maillard browning Arrhenius / lipid-oxidation Arrhenius / water-activity shelf-stability bound) inheriting from 6 precursor domains. own#2 master identity preserved as separable Block A; design constants are physical-limit values, not n=6 force-fit (own#32). Sister to cat-food (3c5d2c9a) with facultative-carnivore relaxation: lower protein floor (18% vs 26%), endogenous taurine (no supplement), broader carb tolerance (GI ≤ 55 design floor)."
 ---
 
 <!-- @own(sections=[WHY, COMPARE, REQUIRES, STRUCT, FLOW, EVOLVE, VERIFY, EXEC SUMMARY, SYSTEM REQUIREMENTS, ARCHITECTURE, CIRCUIT DESIGN, PCB DESIGN, FIRMWARE, MECHANICAL, MANUFACTURING, TEST, BOM, VENDOR, ACCEPTANCE, APPENDIX, IMPACT], prefix="§") -->
@@ -35,12 +34,10 @@ upgraded: "2026-05-01 mk1 PHYSICAL-LIMIT (10): all 5 falsifier-axis targets re-d
 
 > One-line summary: **a complete-and-balanced dog-food formulation where every engineering target is derived from a physical limit** — AAFCO 2024 Dog Food Adult Maintenance Nutrient Profile (protein ≥ 18% DM / fat ≥ 5.5% DM / no taurine min), FDA 21 CFR 501.22 nutritional labeling, Atwater 1900 calorific factors (4-9-4 kcal/g), glycemic-index physiology (design GI ≤ 55 for diabetic-friendly), Maillard browning Arrhenius (extrusion E_a ≈ 100 kJ/mol), lipid-oxidation Arrhenius (E_a ≈ 60-80 kJ/mol shelf-life), water-activity bound (a_w < 0.6 dry, < 0.85 soft-moist). Inherits 6 precursor domains (life/biology-medical + life/agriculture + life/synbio + life/fermentation + life/herbalism + materials/recycling).
 
-> 21-section template (own#15 HARD), third domain of the new `pets` axis (12th axis, 2026-05-01 fan-out batch 2/4).
 >
 > Honest scope per raw 91 C3: the design **targets** are computed
 > physical-limit values (alien-grade 10 = physical-limit reproduction);
 > the design constants are NOT force-fit to n=6 number-theoretic
-> invariants. own#2 master identity (σ·φ=n·τ=J₂=24 at n=6) is verified
 > as a framework-level mathematical fact, not as a justification for the
 > nutritional design. Empirical lab measurement is gated on F-DF-MVP-1..5
 > (2026-07-30 / 2026-08-30); upgrade from mk1-PHYSICAL-LIMIT to
@@ -206,13 +203,10 @@ mk4 (2028+): cultured-meat or insect-protein alternative (black soldier
 fly larva 60% protein) — same AAFCO physical-limit targets, 70% lower
 land-use footprint.
 
-## §7 VERIFY (raw 70 K≥4 axes; physical-limit verification per own#6 + own#31 + own#33)
 
-### §7.1 Embedded verify block (Python stdlib + math + fractions; own#31 v3.19-pass)
 
 The block computes each engineering target from a published physics
 or nutritional model, with literature anchors on every assertion line.
-The n=6 master identity (own#2) is verified as a separable mathematical
 block. NO hardcode-then-assert tautology — every constant on the
 right-hand side of an `assert ==` is either a computed quantity or a
 literature-cited physical/regulatory bound.
@@ -221,7 +215,6 @@ literature-cited physical/regulatory bound.
 # HEXA-DOG-FOOD mk1 §7.1 physical-limit verify (stdlib only)
 # raw 91 C3: every engineering target is computed from a published
 # nutritional / physical / kinetic model. n=6 master identity is
-# verified as a separable mathematical block (own#2 framework-level
 # check). The dog-food design constants are NOT force-fit to n=6
 # invariants — they are physical-limit values inherited from precursor
 # domains (life/biology-medical + life/agriculture + life/synbio +
@@ -233,7 +226,6 @@ from math import gcd, log, exp, ceil
 
 
 # ─────────────────────────────────────────────────────────────────────
-# Block A: own#2 master identity verification (separable, mathematical)
 # ─────────────────────────────────────────────────────────────────────
 
 def divisors(n):
@@ -269,11 +261,8 @@ def J2(n):
         j = j * (p * p - 1) // (p * p)
     return j
 
-# own#2 master identity at n=6 — both sides computed from divisor primitives.
-# This is a mathematical fact, NOT a property of dog-food (own#11 honest C3).
 N6 = 6
 assert sigma(N6) * phi_eul(N6) == N6 * tau(N6) == J2(N6), \
-    "own#2 master identity sigma(n)*phi(n) = n*tau(n) = J_2(n) at n=6 (Mathlib4 mechanical verification: papers/hexa-weave-formal-mechanical-w2-2026-04-28.md AX-1)"
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -595,8 +584,6 @@ assert retort_F0 >= 3.0, \
 # Block G: Cross-precursor inheritance attestation
 #   asserts that the design constants emerge from the precursor physics,
 #   not from arbitrary tuning. Each cross-link is anchored to a literature
-#   citation in the assert message (own#31 anchored-assertion YES marker;
-#   own#33 ai-native-verify-pattern Block G structural template).
 # ─────────────────────────────────────────────────────────────────────
 
 # 1. life/biology-medical → AAFCO 2024 dog profile minima + endogenous taurine
@@ -670,11 +657,9 @@ assert O2_PERMEABILITY_PE_BARRIER < 0.01 * O2_PERMEABILITY_PAPER_ALONE, \
 # ─────────────────────────────────────────────────────────────────────
 
 print("HEXA-DOG-FOOD mk1 §7.1 PHYSICAL-LIMIT verify PASS:")
-print(f"  own#2 master identity: sigma(6)*phi(6) = {sigma(N6)}*{phi_eul(N6)} = {sigma(N6)*phi_eul(N6)}")
 print(f"                         n*tau(6)        = {N6}*{tau(N6)} = {N6*tau(N6)}")
 print(f"                         J_2(6)          = {J2(N6)}")
 print()
-print(f"  (A) own#2 master identity at n=6 — PASS")
 print(f"  (B) AAFCO 2024 dog profile compliance:    PASS (12/12 nutrients)")
 print(f"  (C) Atwater ME density:                    {ME_atwater:.2f} kcal/g (target >= 3.8)")
 print(f"  (C) NRC-dog-corrected ME:                  {ME_nrc_dog:.2f} kcal/g (target >= 3.3)")
@@ -731,7 +716,6 @@ The design inherits from 6 precursor domains — life/biology-medical
 life/synbio (10 EAA registry — not 11), life/fermentation (B. animalis
 lactis Bb12 canine probiotic strain + CFU viability), life/herbalism
 (turmeric curcumin + ginger zingiberene + mixed-tocopherol), materials/
-recycling (PE-laminated kraft pouch separability + O2 barrier). own#2
 master identity (σ·φ=n·τ=J₂=24 at n=6) is verified as a separable
 mathematical fact. raw 91 C3 honest: design constants are NOT force-fit
 to n=6 invariants; they are physical-limit values. Empirical validation
@@ -796,11 +780,9 @@ gated on F-DF-MVP-1..5 (mk2 100 kg pilot, 2026-Q4).
 ## §11 CIRCUIT DESIGN
 
 Not applicable (consumer food, no electrical circuit). Listed for
-own#15 21-section completeness.
 
 ## §12 PCB DESIGN
 
-Not applicable. Listed for own#15 completeness.
 
 ## §13 FIRMWARE
 
@@ -927,11 +909,8 @@ Mechanical aspects of the kibble + pouch:
     barrier spec.
 25. **NIST CODATA** (2018). — R_gas 8.314 J/mol/K (Arrhenius).
 26. **OEIS** (A000203, A000005, A000010, A007434). — number-theoretic
-    sequence references (n=6 master identity, own#2).
 27. **Mathlib4** — n=6 master identity mechanical verification (sister
     reference: `papers/hexa-weave-formal-mechanical-w2-2026-04-28.md`).
-28. **Internal**: `theory/proofs/theorem-r1-uniqueness.md` (own#2 SSOT);
-    `domains/pets/cat-litter/cat-litter.md` (own#33 Block A-G template);
     `domains/pets/cat-food/cat-food.md` (sister cat-food at 3c5d2c9a).
 
 ## §16 TEST
@@ -990,19 +969,15 @@ Test plan:
 | Mondi Group (AT) / Amcor (AU) | kraft+PE pouch | retail SKU packaging |
 | canon private framework | own_doc_lint / own31 lint | docs gate |
 
-## §19 ACCEPTANCE / MISS criteria (own#12 pre-declared)
 
 ### §19.1 PASS gates
 
 - **ACCEPT (P1 §7.1 verify)**: §7.1 embedded Python block prints
   "HEXA-DOG-FOOD mk1 §7.1 PHYSICAL-LIMIT verify PASS" with all asserts
-  PASS in Blocks A-G (own#2 master identity + AAFCO 12/12 nutrients +
   Atwater ME ≥ 3.8 kcal/g + GI ≤ 55 + Maillard equivalent-shelf-time
   within cap + lipid-ox 25 °C shelf ≥ 12 mo + a_w < 0.55 + retort F0
   ≥ 3 min + 6 precursor cross-link attestations).
-- **ACCEPT (P2 own#31 lint)**: `tool/own31_verify_tautology_ban_lint.hexa
   --file domains/pets/dog-food/dog-food.md` returns PASS.
-- **ACCEPT (P3 own#6 + own#15)**: `tool/own_doc_lint.hexa --rule 6/15`
   zero violations on this file.
 - **ACCEPT (P4 raw 70 K≥4)**: ≥ 4 of 8 raw 70 axes PASS (currently 7
   PASS, 1 DEFER for empirical CHI2 — meets threshold).
@@ -1012,10 +987,7 @@ Test plan:
   in §7.1 Block G is anchored to a literature citation in §15.2.
 - **MISS** if any of:
   - (a) §7.1 verify block fails to PASS,
-  - (b) own#31 lint flags a tautology pattern,
-  - (c) own#6 / own#15 violations,
   - (d) F-DF-MVP-1..5 falsifier triggers post-empirical-batch,
-  - (e) own#3 violation (more than one .md per domain),
   - (f) any precursor inheritance assertion in §7.1 Block G fails.
 - **DEFER**: F-DF-MVP-1..5 are pre-declared 90-day MVP empirical
   falsifier gates; remaining DEFER until 2026-07-30 (4 axes) +
@@ -1066,18 +1038,12 @@ Test plan:
   arginine, 3.8 kcal/g ME, GI ≤ 55, a_w < 0.55, 12-mo shelf) are
   derived from AAFCO regulatory minima + Atwater calorific factors +
   glycemic-index physiology + Arrhenius kinetics + a_w-microbial
-  growth bounds, NOT from σ(6)=12 / τ(6)=4 / J₂(6)=24. own#2 master
   identity is verified as a separable mathematical fact (§7.1 Block
-  A); dog-food physical parameters live in Blocks B-F. Per own#32
   (physical-limit-alternative-framing, 2026-05-01) the engineering-
   design layer is decoupled from n=6 force-fit.
-- **own#11 (no Clay Millennium claim)**: PASS — consumer food design,
   no theoretical claim addressed.
-- **own#2 (n=6 master identity HARD)**: PASS via §7.1 Block A standalone
   computation; the master identity holds at n=6 as a number-theoretic
   fact independent of the dog-food design.
-- **own#33 (ai-native-verify-pattern)**: PASS — §7.1 follows the
-  cat-litter / cat-food §7 Block A-G canonical template (own#2
   separable identity in Block A + 5 physical-limit physics blocks
   B-F + 6-axis precursor cross-link attestation in Block G);
   structurally emittable by AI agents.
@@ -1153,6 +1119,4 @@ for species-specific physical-limit anchoring.
   precursor domains (life/biology-medical + life/agriculture + life/
   synbio + life/fermentation + life/herbalism + materials/recycling).
   §7 VERIFY Block A-G structure follows the cat-litter / cat-food §7
-  canonical template (own#33 ai-native-verify-pattern). Falsifier
   deadlines: F-DF-MVP-1..4 (2026-07-30) + F-DF-MVP-5 (2026-08-30).
-  Lint: own#31 v3.19 PASS; own_doc_lint --rule 6/15 PASS.

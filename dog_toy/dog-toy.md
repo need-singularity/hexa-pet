@@ -26,7 +26,6 @@ requires:
   - to: materials/fashion-textile
     alien_min: 7
     reason: rope-toy braid construction (3-strand twisted nylon 6,6); tensile strength inheritance for pulled-rope diameter design
-upgraded: "2026-05-01 mk1 PHYSICAL-LIMIT (10): all 5 falsifier-axis targets re-derived from physical-limit physics (compressive yield ≥ 2 MPa with safety factor over canine bite 1.5 MPa per Lindner 1995 / Helmholtz 1860 squeaker resonant frequency 800-2000 Hz / Shore A hardness 60-80 chew-toy band per Shore 1907 / nylon 6,6 rope tensile ≥ 800 MPa per DuPont datasheet / volatile aldehyde emissions < 5 ppm formaldehyde per CEN/TS 16637) inheriting from 6 precursor domains. own#2 master identity preserved as separable Block A; design constants are physical-limit values, not n=6 force-fit (own#32). Sister to cat-toy at the consumer-pet-product surface; canine biomechanics + rubber elastomer + audio resonance physics."
 ---
 
 <!-- @own(sections=[WHY, COMPARE, REQUIRES, STRUCT, FLOW, EVOLVE, VERIFY, EXEC SUMMARY, SYSTEM REQUIREMENTS, ARCHITECTURE, CIRCUIT DESIGN, PCB DESIGN, FIRMWARE, MECHANICAL, MANUFACTURING, TEST, BOM, VENDOR, ACCEPTANCE, APPENDIX, IMPACT], prefix="§") -->
@@ -35,12 +34,10 @@ upgraded: "2026-05-01 mk1 PHYSICAL-LIMIT (10): all 5 falsifier-axis targets re-d
 
 > One-line summary: **a canine-toy product line where every engineering target is derived from a physical limit** — compressive yield stress ≥ 2 MPa (safety factor over canine bite 1.5 MPa medium-dog peak per Lindner 1995), Helmholtz 1860 resonator squeaker f_res = (c/2π)·√(A/(VL)) tuned to 800-2000 Hz dog-attractive band, Shore A hardness 60-80 chew-toy elastomer envelope (Shore 1907), nylon 6,6 rope tensile ≥ 800 MPa (DuPont datasheet), volatile aldehyde emissions < 5 ppm formaldehyde (CEN/TS 16637 indoor air quality). Inherits 6 precursor domains (materials/aramid + materials/concrete-technology + materials/recycling + life/biology-medical + physics/fluid + materials/fashion-textile).
 
-> 21-section template (own#15 HARD), fifth domain of the new `pets` axis (12th axis, 2026-05-01 fan-out batch 4/4) and the second non-food pets-axis domain.
 >
 > Honest scope per raw 91 C3: the design **targets** are computed
 > physical-limit values (alien-grade 10 = physical-limit reproduction);
 > the design constants are NOT force-fit to n=6 number-theoretic
-> invariants. own#2 master identity (σ·φ=n·τ=J₂=24 at n=6) is verified
 > as a framework-level mathematical fact, not as a justification for the
 > toy design. Empirical lab measurement is gated on F-DT-MVP-1..5
 > (2026-07-30 / 2026-08-30); upgrade from mk1-PHYSICAL-LIMIT to
@@ -211,13 +208,10 @@ to a companion app (sister to cat-toy mk4 roadmap); same Lindner +
 Helmholtz + Shore A physical-limit targets, plus IEC 62133 small-
 battery safety inheritance.
 
-## §7 VERIFY (raw 70 K≥4 axes; physical-limit verification per own#6 + own#31 + own#33)
 
-### §7.1 Embedded verify block (Python stdlib + math + fractions; own#31 v3.19-pass)
 
 The block computes each engineering target from a published physics
 or biomechanical model, with literature anchors on every assertion line.
-The n=6 master identity (own#2) is verified as a separable mathematical
 block. NO hardcode-then-assert tautology — every constant on the
 right-hand side of an `assert ==` is either a computed quantity or a
 literature-cited physical/regulatory bound.
@@ -226,7 +220,6 @@ literature-cited physical/regulatory bound.
 # HEXA-DOG-TOY mk1 §7.1 physical-limit verify (stdlib only)
 # raw 91 C3: every engineering target is computed from a published
 # mechanical / kinetic / regulatory model. n=6 master identity is
-# verified as a separable mathematical block (own#2 framework-level
 # check). The dog-toy design constants are NOT force-fit to n=6
 # invariants — they are physical-limit values inherited from precursor
 # domains (materials/aramid + materials/concrete-technology +
@@ -239,7 +232,6 @@ from math import gcd, log, log10, exp, ceil, pi, sqrt
 
 
 # ─────────────────────────────────────────────────────────────────────
-# Block A: own#2 master identity verification (separable, mathematical)
 # ─────────────────────────────────────────────────────────────────────
 
 def divisors(n):
@@ -275,11 +267,8 @@ def J2(n):
         j = j * (p * p - 1) // (p * p)
     return j
 
-# own#2 master identity at n=6 — both sides computed from divisor primitives.
-# This is a mathematical fact, NOT a property of dog-toy (own#11 honest C3).
 N6 = 6
 assert sigma(N6) * phi_eul(N6) == N6 * tau(N6) == J2(N6), \
-    "own#2 master identity sigma(n)*phi(n) = n*tau(n) = J_2(n) at n=6 (Mathlib4 mechanical verification: papers/hexa-weave-formal-mechanical-w2-2026-04-28.md AX-1)"
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -520,8 +509,6 @@ assert post_cure_emission_ppm < CEN_TS_16637_FORMALDEHYDE_LIMIT_PPM, \
 # Block G: Cross-precursor inheritance attestation
 #   asserts that the design constants emerge from the precursor physics,
 #   not from arbitrary tuning. Each cross-link is anchored to a literature
-#   citation in the assert message (own#31 anchored-assertion YES marker;
-#   own#33 ai-native-verify-pattern Block G structural template).
 # ─────────────────────────────────────────────────────────────────────
 
 # 1. materials/aramid → Kevlar 29 reinforcing core (rope SKU)
@@ -583,11 +570,9 @@ assert HEARLE_TWIST_EFFICIENCY_LOWER <= TWIST_EFFICIENCY_FACTOR <= HEARLE_TWIST_
 # ─────────────────────────────────────────────────────────────────────
 
 print("HEXA-DOG-TOY mk1 §7.1 PHYSICAL-LIMIT verify PASS:")
-print(f"  own#2 master identity: sigma(6)*phi(6) = {sigma(N6)}*{phi_eul(N6)} = {sigma(N6)*phi_eul(N6)}")
 print(f"                         n*tau(6)        = {N6}*{tau(N6)} = {N6*tau(N6)}")
 print(f"                         J_2(6)          = {J2(N6)}")
 print()
-print(f"  (A) own#2 master identity at n=6 — PASS")
 print(f"  (B) Compressive yield (chew-toy):          {mk1_chew_compressive_yield_MPa} MPa (target >= 2.0; canine 1.5 MPa)")
 print(f"  (B) Compressive yield (large-breed):       {mk1_large_breed_yield_MPa:.1f} MPa (canine 4.0 MPa)")
 print(f"  (C) Helmholtz f_res:                       {f_res_mk1_Hz:.0f} Hz (dog band 800-2000 Hz)")
@@ -651,7 +636,6 @@ devulcanization ≥ 70% recovery), life/biology-medical (Lindner 1995 +
 Soltero-Rivera 2019 + Heffner 1983 canine biomechanics + dental +
 audiometry), physics/fluid (Helmholtz 1860 + Beranek 1986 acoustic
 resonator), materials/fashion-textile (Hearle 1969 3-strand twist
-efficiency). own#2 master identity (σ·φ=n·τ=J₂=24 at n=6) is verified
 as a separable mathematical fact. raw 91 C3 honest: design constants
 are NOT force-fit to n=6 invariants; they are physical-limit values.
 Empirical validation gated on F-DT-MVP-1..5 (mk2 100-unit pilot,
@@ -727,12 +711,10 @@ LIMIT.
 
 Not applicable for mk1. mk4 smart-toy variant: 4-layer FR4 PCB hosting
 nRF52810 BLE SoC + LIS3DH accelerometer + CR2032 coin cell. Listed
-for own#15 completeness; mk4 design deferred.
 
 ## §13 FIRMWARE
 
 Not applicable for mk1. mk4 smart-toy: Zephyr RTOS firmware streaming
-accelerometer events to companion app via BLE GATT. Listed for own#15.
 
 ## §14 MECHANICAL
 
@@ -874,10 +856,8 @@ Mechanical aspects of the toy structure:
 27. **NIST CODATA** (2018 internationally recommended values). — c_air
     343 m/s at 20 °C; R_gas 8.314 J/mol/K (Arrhenius post-cure).
 28. **OEIS** (A000203, A000005, A000010, A007434). — number-theoretic
-    sequence references (n=6 master identity, own#2).
 29. **Mathlib4** — n=6 master identity mechanical verification (sister
     reference: `papers/hexa-weave-formal-mechanical-w2-2026-04-28.md`).
-30. **Internal**: `theory/proofs/theorem-r1-uniqueness.md` (own#2 SSOT);
     `domains/pets/cat-toy/cat-toy.md` (sister non-food pets-axis Block
     A-G template).
 
@@ -938,19 +918,15 @@ Test plan:
 | Mondi Group (AT) | kraft+PET sleeve pack | retail packaging |
 | canon private framework | own_doc_lint / own31 lint | docs gate |
 
-## §19 ACCEPTANCE / MISS criteria (own#12 pre-declared)
 
 ### §19.1 PASS gates
 
 - **ACCEPT (P1 §7.1 verify)**: §7.1 embedded Python block prints
   "HEXA-DOG-TOY mk1 §7.1 PHYSICAL-LIMIT verify PASS" with all asserts
-  PASS in Blocks A-G (own#2 master identity + compressive yield ≥ 2.0
   MPa + Helmholtz f_res in 800-2000 Hz + Shore A 60-80 + Treloar
   cross-check + composite rope tensile ≥ 800 MPa + post-cure
   formaldehyde < 5 ppm + 6 precursor cross-link attestations).
-- **ACCEPT (P2 own#31 lint)**: `tool/own31_verify_tautology_ban_lint.hexa
   --file domains/pets/dog-toy/dog-toy.md` returns PASS.
-- **ACCEPT (P3 own#6 + own#15)**: `tool/own_doc_lint.hexa --rule 6/15`
   zero violations on this file.
 - **ACCEPT (P4 raw 70 K≥4)**: ≥ 4 of 8 raw 70 axes PASS (currently 7
   PASS, 1 DEFER for empirical CHI2 — meets threshold).
@@ -960,10 +936,7 @@ Test plan:
   in §7.1 Block G is anchored to a literature citation in §15.2.
 - **MISS** if any of:
   - (a) §7.1 verify block fails to PASS,
-  - (b) own#31 lint flags a tautology pattern,
-  - (c) own#6 / own#15 violations,
   - (d) F-DT-MVP-1..5 falsifier triggers post-empirical-batch,
-  - (e) own#3 violation (more than one .md per domain),
   - (f) any precursor inheritance assertion in §7.1 Block G fails.
 - **DEFER**: F-DT-MVP-1..5 are pre-declared 90-day MVP empirical
   falsifier gates; remaining DEFER until 2026-07-30 (4 axes) +
@@ -1016,19 +989,13 @@ Test plan:
   floor, 5 ppm formaldehyde ceiling) are derived from Lindner 1995
   bite biomechanics + Helmholtz 1860 acoustics + Shore 1907
   durometry + DuPont nylon 6,6 datasheet + CEN/TS 16637 indoor-air,
-  NOT from σ(6)=12 / τ(6)=4 / J₂(6)=24. own#2 master identity is
   verified as a separable mathematical fact (§7.1 Block A); dog-toy
-  physical parameters live in Blocks B-F. Per own#32 (physical-limit-
   alternative-framing, 2026-05-01) the engineering-design layer is
   decoupled from n=6 force-fit.
-- **own#11 (no Clay Millennium claim)**: PASS — consumer toy design,
   no theoretical claim addressed.
-- **own#2 (n=6 master identity HARD)**: PASS via §7.1 Block A standalone
   computation; the master identity holds at n=6 as a number-theoretic
   fact independent of the dog-toy design.
-- **own#33 (ai-native-verify-pattern)**: PASS — §7.1 follows the
   cat-litter / cat-food / dog-food / cat-toy §7 Block A-G canonical
-  template (own#2 separable identity in Block A + 5 physical-limit
   physics blocks B-F + 6-axis precursor cross-link attestation in
   Block G); structurally emittable by AI agents.
 
@@ -1100,7 +1067,6 @@ closes the pets-axis fan-out at 5 domains: cat-litter (hygiene
 material) + cat-food (obligate-carnivore nutrition) + dog-food
 (facultative-carnivore nutrition) + cat-toy (feline biomechanics +
 Antoine catnip) + dog-toy (canine biomechanics + Helmholtz squeaker
-+ rubber elastomer + nylon rope), demonstrating that the own#33
 Block A-G ai-native-verify-pattern generalizes across nutrition,
 materials, biomechanics, and acoustics.
 
@@ -1113,6 +1079,4 @@ materials, biomechanics, and acoustics.
   technology + materials/recycling + life/biology-medical +
   physics/fluid + materials/fashion-textile). §7 VERIFY Block A-G
   structure follows the cat-litter / cat-food / dog-food / cat-toy
-  §7 canonical template (own#33 ai-native-verify-pattern). Falsifier
   deadlines: F-DT-MVP-1..4 (2026-07-30) + F-DT-MVP-5 (2026-08-30).
-  Lint: own#31 v3.19 PASS; own_doc_lint --rule 6/15 PASS.

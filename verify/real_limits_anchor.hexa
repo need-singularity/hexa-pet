@@ -19,7 +19,6 @@
 //       L5 canine bite 230–1,400 N Ellis 2008 (HARD per-breed)
 //       L8 ANSI Z136.1 laser MPE Class IIIa < 5 mW (HARD safety)
 //
-// Honesty (raw#10 C3): pet-medical claims STRICTLY UNPROVEN without
 // veterinary IRB. This repo is consumer-product engineering, not
 // veterinary medicine — "consult licensed veterinarian" for any clinical
 // decision. Pet-food/pharma/retail brands (Hill's, Royal Canin, Purina,
@@ -107,7 +106,6 @@ fn main() {
 
     // 3. Honesty caveats: pet-medical claims STRICTLY UNPROVEN without
     //    veterinary IRB. "Consult licensed veterinarian" for clinical
-    //    decisions. (raw#10 C3 + LATTICE_POLICY §3.3.)
     let caveats = [
         ["consumer-product, not veterinary medicine",  "consumer-product"],
         ["AAFCO is not FDA approval caveat",            "AAFCO is not FDA"],

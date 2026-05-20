@@ -10,14 +10,11 @@
 //
 // Mirrors hexa-bio/install.hexa pattern (sister substrate, 2026-05-04).
 //
-// Responsibilities (each idempotent, raw#9 STRICT — hexa-only orchestration):
 //   1. Pre-install: NO external deps (pure spec substrate). Always exit 0.
 //   2. Post-install: run `hexa-pet selftest` via the freshly-staged
 //      cli/hexa-pet.hexa. Selftest output captured; non-PASS = warn-only
 //      (not a blocker — placeholder dispatcher always passes 5-verb count).
 //
-// raw#9 hexa-only, raw#11 snake_case, raw#15 no-hardcode.
-// raw#10 honest C3: see hexa-pet/README.md "Status" section.
 
 fn run_quick_selftest(root: str) -> bool {
     let cli = root + "/cli/hexa-pet.hexa"

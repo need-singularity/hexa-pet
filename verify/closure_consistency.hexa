@@ -9,7 +9,6 @@
 // Per LATTICE_POLICY §1.3 rule 4: this is *internal* self-consistency
 // (own substrate's own scoreboard), NOT a claim about external entities.
 // Hill's, Royal Canin, Purina, Zoetis, Boehringer, Elanco, Petco,
-// Chewy use THEIR OWN specs — raw#10 C3.
 
 let HOME = env("HOME")
 let HEXA_PET_ROOT_ENV = env("HEXA_PET_ROOT")

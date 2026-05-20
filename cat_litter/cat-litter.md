@@ -26,7 +26,6 @@ requires:
   - to: materials/recycling
     alien_min: 7
     reason: kraft-paper-with-PE-liner bag end-of-life recyclability + bentonite mineral-content reclamation
-upgraded: "2026-05-01 mk1 DRAFT (4) -> mk1 PHYSICAL-LIMIT (10): all 4 falsifier-axis targets re-derived from physical-limit computations (Helmholtz double-layer / Yoon-Nelson breakthrough / BET surface-area / Eigen-Hammes diffusion limit) inheriting from 6 precursor domains. n=6 invariant projection retained as own#2 framework-level master-identity check (σ·φ=n·τ=J₂=24) but cat-litter design constants are derived from physics, not force-fit to n=6."
 ---
 
 <!-- @own(sections=[WHY, COMPARE, REQUIRES, STRUCT, FLOW, EVOLVE, VERIFY, EXEC SUMMARY, SYSTEM REQUIREMENTS, ARCHITECTURE, CIRCUIT DESIGN, PCB DESIGN, FIRMWARE, MECHANICAL, MANUFACTURING, TEST, BOM, VENDOR, ACCEPTANCE, APPENDIX, IMPACT], prefix="§") -->
@@ -35,13 +34,11 @@ upgraded: "2026-05-01 mk1 DRAFT (4) -> mk1 PHYSICAL-LIMIT (10): all 4 falsifier-
 
 > One-line summary: **a cat-litter design where every engineering target is derived from a physical limit** — Helmholtz double-layer (swell ratio), Yoon-Nelson breakthrough (odor suppression), BET surface area (charcoal iodine), Eigen-Hammes diffusion limit (zeolite ion-exchange), Darcy permeability (dust pour rate). Inherits 6 precursor domains (materials/ceramics + materials/concrete-technology + life/biology-medical + life/agriculture + physics/fluid + materials/recycling).
 
-> 21-section template (own#15 HARD), inaugural domain of the new `pets`
 > axis (12th axis, 2026-05-01).
 >
 > Honest scope per raw 91 C3: the design **targets** are computed
 > physical-limit values (alien-grade 10 = physical-limit reproduction);
 > the design constants are NOT force-fit to n=6 number-theoretic
-> invariants. own#2 master identity (σ·φ=n·τ=J₂=24 at n=6) is verified
 > as a framework-level mathematical fact, not as a justification for the
 > material design. Empirical lab measurement is gated on F-CL-MVP-1..4
 > (2026-07-30 / 2026-08-30); upgrade from mk1-PHYSICAL-LIMIT to mk1-EMPIRICAL
@@ -172,23 +169,18 @@ mk3 (2027-Q2): 1-ton commercial run + retail-shelf SKU launch (3 sizes ×
 mk4 (2028+): bio-based bentonite alternative (corn-starch-coated zeolite
 binder) — same 11×-swell physical-limit target, 50% lower carbon footprint.
 
-## §7 VERIFY (raw 70 K≥4 axes; physical-limit verification per own#6 + own#31)
 
-### §7.1 Embedded verify block (Python stdlib + math + fractions; own#31 v3.18-pass)
 
 The block computes each engineering target from a published physics
 model, with literature anchors on every assertion line. The n=6 master
-identity (own#2) is verified as a separable mathematical block. NO
 hardcode-then-assert tautology — every constant on the right-hand side
 of an `assert ==` is either a computed quantity or a literature-cited
-physical bound (with the citation on the assert line for own#31 anchored-
 assertion YES marker compliance).
 
 ```python
 # HEXA-CAT-LITTER mk1 §7.1 physical-limit verify (stdlib only)
 # raw 91 C3: every engineering target is computed from a published physics
 # model. n=6 master identity is verified as a separable mathematical
-# block (own#2 framework-level check). The cat-litter design constants
 # are NOT force-fit to n=6 invariants — they are physical-limit values
 # inherited from precursor domains (materials/ceramics + concrete-technology
 # + life/agriculture + life/biology-medical + physics/fluid + materials/
@@ -200,7 +192,6 @@ from math import gcd, pi, sqrt, log, exp, ceil
 
 
 # ─────────────────────────────────────────────────────────────────────
-# Block A: own#2 master identity verification (separable, mathematical)
 # ─────────────────────────────────────────────────────────────────────
 
 def divisors(n):
@@ -236,11 +227,8 @@ def J2(n):
         j = j * (p * p - 1) // (p * p)
     return j
 
-# own#2 master identity at n=6 — both sides computed from divisor primitives.
-# This is a mathematical fact, NOT a property of cat-litter (own#11 honest C3).
 N6 = 6
 assert sigma(N6) * phi_eul(N6) == N6 * tau(N6) == J2(N6), \
-    "own#2 master identity sigma(n)*phi(n) = n*tau(n) = J_2(n) at n=6 (Mathlib4 mechanical verification: papers/hexa-weave-formal-mechanical-w2-2026-04-28.md AX-1)"
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -531,7 +519,6 @@ assert zeolite_rate >= 1.0e2, \
 # Block G: Cross-precursor inheritance attestation
 #   asserts that the design constants emerge from the precursor physics,
 #   not from arbitrary tuning. Each cross-link is anchored to a literature
-#   citation in the assert message (own#31 anchored-assertion YES marker).
 # ─────────────────────────────────────────────────────────────────────
 
 # 1. materials/ceramics → clinoptilolite Si/Al ratio (Coombs 1997)
@@ -571,11 +558,9 @@ assert 3.0 <= moisture_pct <= 8.0, \
 # ─────────────────────────────────────────────────────────────────────
 
 print("HEXA-CAT-LITTER mk1 §7.1 PHYSICAL-LIMIT verify PASS:")
-print(f"  own#2 master identity: sigma(6)*phi(6) = {sigma(N6)}*{phi_eul(N6)} = {sigma(N6)*phi_eul(N6)}")
 print(f"                         n*tau(6)        = {N6}*{tau(N6)} = {N6*tau(N6)}")
 print(f"                         J_2(6)          = {J2(N6)}")
 print()
-print(f"  (A) own#2 master identity at n=6 — PASS")
 print(f"  (B) Helmholtz double-layer swell:        {swell_x:.2f}x   (target >= 11)")
 print(f"  (B) Atterberg LL conservative bound:     >= {LL_swell_lower:.1f}x")
 print(f"  (C) Yoon-Nelson breakthrough:            {t_break:.1f}h    (target >= 22)")
@@ -617,7 +602,6 @@ rate), Kozeny-Carman permeability (dust). The design inherits from 6
 precursor domains — materials/ceramics (zeolite framework), materials/
 concrete-technology (moisture-curing analog), life/agriculture
 (bentonite Atterberg LL), life/biology-medical (NH3 OSHA PEL),
-physics/fluid (Darcy permeability), materials/recycling (bag EOL). own#2
 master identity (σ·φ=n·τ=J₂=24 at n=6) is verified as a separable
 mathematical fact. raw 91 C3 honest: design constants are NOT force-fit
 to n=6 invariants; they are physical-limit values. Empirical validation
@@ -668,11 +652,9 @@ gated on F-CL-MVP-1..4 (mk2 100 kg pilot, 2026-Q4).
 ## §11 CIRCUIT DESIGN
 
 Not applicable (consumer material, no electrical circuit). Listed for
-own#15 21-section completeness.
 
 ## §12 PCB DESIGN
 
-Not applicable. Listed for own#15 completeness.
 
 ## §13 FIRMWARE
 
@@ -759,10 +741,8 @@ Mechanical aspects of the litter granule itself:
 17. **NIST CODATA** (2018 internationally recommended values). —
     fundamental constants (e, k_B, N_A, ε₀).
 18. **OEIS** (A000203, A000005, A000010, A001414, A007434). —
-    number-theoretic sequence references (n=6 master identity, own#2).
 19. **Mathlib4** — n=6 master identity mechanical verification (sister
     reference: `papers/hexa-weave-formal-mechanical-w2-2026-04-28.md`).
-20. **Internal**: `theory/proofs/theorem-r1-uniqueness.md` (own#2 SSOT).
 
 ## §16 TEST
 
@@ -814,18 +794,14 @@ Test plan:
 | Mondi Group (AT) | kraft-paper bag | retail SKU packaging |
 | canon private framework | own_doc_lint / own31 lint | docs gate |
 
-## §19 ACCEPTANCE / MISS criteria (own#12 pre-declared)
 
 ### §19.1 PASS gates
 
 - **ACCEPT (P1 §7.1 verify)**: §7.1 embedded Python block prints "HEXA-CAT-
   LITTER mk1 §7.1 PHYSICAL-LIMIT verify PASS" with all asserts PASS in
-  Blocks A-G (own#2 master identity + Helmholtz swell ≥ 11× + Yoon-Nelson
   ≥ 22 h + BET iodine ≥ 1050 mg/g + Kozeny-Carman dust < 180 µg/m³ +
   Eigen-Hammes ceiling respected + 6 precursor cross-link attestations).
-- **ACCEPT (P2 own#31 lint)**: `tool/own31_verify_tautology_ban_lint.hexa
   --file domains/pets/cat-litter/cat-litter.md` returns PASS.
-- **ACCEPT (P3 own#6 + own#15)**: `tool/own_doc_lint.hexa --rule 6/15`
   zero violations on this file.
 - **ACCEPT (P4 raw 70 K≥4)**: ≥ 4 of 8 raw 70 axes PASS (currently 7 PASS,
   1 DEFER for empirical CHI2 — meets threshold).
@@ -835,10 +811,7 @@ Test plan:
   in §7.1 Block G is anchored to a literature citation in §15.2.
 - **MISS** if any of:
   - (a) §7.1 verify block fails to PASS,
-  - (b) own#31 lint flags a tautology pattern,
-  - (c) own#6 / own#15 violations,
   - (d) F-CL-MVP-1..4 falsifier triggers post-empirical-batch,
-  - (e) own#3 violation (more than one .md per domain),
   - (f) any precursor inheritance assertion in §7.1 Block G fails.
 - **DEFER**: F-CL-MVP-1..4 are pre-declared 90-day MVP empirical falsifier
   gates; remaining DEFER until 2026-07-30 (3 axes) + 2026-08-30 (odor).
@@ -872,16 +845,13 @@ Test plan:
   trial.
 - **NOT n=6 force-fit**: cat-litter design constants (swell × 11, odor 22h,
   iodine 1050 mg/g, dust 180 µg/m³) are derived from physics models,
-  NOT from σ(6)=12 / τ(6)=4 / J₂(6)=24. own#2 master identity is verified
   as a separable mathematical fact (§7.1 Block A); cat-litter physical
   parameters live in Blocks B-F. raw 91 C3 honest: prior cat-litter draft
   (mk1 DRAFT, 2026-05-01) had a forced n=6 mapping (σ=12 swell × τ=4 odor
   × φ=2 mode × sopfr=5 mineral × J₂=24 hour); this revision (mk1 PHYSICAL-
   LIMIT, 2026-05-01 same-day) replaced the force-fit with literature-
   anchored physics computation.
-- **own#11 (no Clay Millennium claim)**: PASS — consumer material design,
   no theoretical claim addressed.
-- **own#2 (n=6 master identity HARD)**: PASS via §7.1 Block A standalone
   computation; the master identity holds at n=6 as a number-theoretic
   fact independent of the cat-litter design.
 
@@ -932,11 +902,9 @@ from.
 
 - 2026-05-01T05:00:00Z — initial mk1 DRAFT registered (alien-grade 4,
   forced n=6 mapping σ=12 swell × τ=4 odor × φ=2 mode × sopfr=5 mineral
-  × J₂=24 hour). Lint: own#31 PASS (substantive defs in §7.1 verify
   block; pretty-fit values not flagged because they were anchored
   through `def divisors / sigma / tau / phi_eul / sopfr / J2` computations).
 - 2026-05-01T16:30:00Z — **mk1 PHYSICAL-LIMIT revision (alien-grade 10)**.
-  §7 VERIFY rewritten: own#2 master identity preserved as separable Block A;
   cat-litter design constants now derived from Helmholtz / Yoon-Nelson /
   BET / Eigen-Hammes / Kozeny-Carman physics (Blocks B-F); 6 precursor
   domain inheritances attested with literature citations on each

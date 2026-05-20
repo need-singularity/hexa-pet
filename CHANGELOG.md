@@ -89,14 +89,12 @@ All notable changes to **hexa-pet** are documented here. Format follows
   `help`, `--version`. All subcmds print the corresponding spec doc
   headline (placeholder; working numerical impl TBD).
 - `tests/test_selftest.hexa` — 5-verb count check harness.
-- `install.hexa` hx hook (raw#9 STRICT — hexa-only orchestration; zero
   external deps).
 - MIT license, README, hexa.toml manifest.
 - GitHub-only distribution (canonical at
   <https://github.com/dancinlab/hexa-pet>; install via
   `hx install hexa-pet` from hexa-lang registry, or `git clone`).
 
-### Honest scope (raw#10 C3)
 - 5 of 5 verbs ship as **spec docs only** with placeholder CLI dispatcher.
   Working `.hexa` numerical sandboxes are TBD per per-verb F-*-MVP-*
   deadlines (cat-litter F-CL-MVP-1 first 2026-07-30; cat-food F-CF-MVP-1..5
@@ -115,7 +113,6 @@ All notable changes to **hexa-pet** are documented here. Format follows
 ### Provenance
 - Extracted from `canon/domains/pets/` (SHA `c0f1f570`,
   2026-05-06). Source files unchanged; directory slugs converted from
-  `kebab-case` to `snake_case` per hexa-lang raw#11.
 - Sister extractions: `hexa-bio` v1.0.0 (4-verb molecular toolkit,
   Apache-2.0, 2026-05-04).
 - Closure verdict: **SPEC_FIRST** (5/5 verbs spec-only at v1.0.0;

@@ -26,7 +26,6 @@ requires:
   - to: life/entomology
     alien_min: 7
     reason: prey simulation (feather / fur mimic of insect / bird locomotion); Reynolds-number aerodynamics of small fluttering objects
-upgraded: "2026-05-01 mk1 PHYSICAL-LIMIT (10): all 5 falsifier-axis targets re-derived from physical-limit physics (Wöhler S-N fatigue ≥ 10⁵ cycles at 58 N cat-bite peak force / Antoine equation nepetalactone vapor pressure at 20-25 °C / EN 71-1 toy choking-hazard size 31.7 mm or D > 44.5 mm cylindrical / Velcro peel ≥ 1 N/cm² / Martindale ≥ 10⁴ abrasion cycles) inheriting from 6 precursor domains. own#2 master identity preserved as separable Block A; design constants are physical-limit values, not n=6 force-fit (own#32). Sister to cat-food / dog-food (3c5d2c9a + this batch) at the consumer-pet-product surface; first non-food pets-axis domain anchored on materials + biomechanics rather than nutrition."
 ---
 
 <!-- @own(sections=[WHY, COMPARE, REQUIRES, STRUCT, FLOW, EVOLVE, VERIFY, EXEC SUMMARY, SYSTEM REQUIREMENTS, ARCHITECTURE, CIRCUIT DESIGN, PCB DESIGN, FIRMWARE, MECHANICAL, MANUFACTURING, TEST, BOM, VENDOR, ACCEPTANCE, APPENDIX, IMPACT], prefix="§") -->
@@ -35,12 +34,10 @@ upgraded: "2026-05-01 mk1 PHYSICAL-LIMIT (10): all 5 falsifier-axis targets re-d
 
 > One-line summary: **a feline-toy product line where every engineering target is derived from a physical limit** — Wöhler S-N fatigue (≥ 10⁵ cycles at cat-bite peak force 58 N per Lindner 1995), Antoine equation for nepetalactone vapor pressure (catnip volatile release at 20-25 °C room temperature), EN 71-1 European toy-safety choking-hazard threshold (minimum dimension ≥ 31.7 mm OR cylindrical diameter > 44.5 mm), Velcro hook-loop peel strength ≥ 1 N/cm², Martindale abrasion ≥ 10⁴ cycles before fiber breakdown. Inherits 6 precursor domains (materials/aramid + materials/recycling + materials/fashion-textile + physics/fluid + life/biology-medical + life/entomology).
 
-> 21-section template (own#15 HARD), fourth domain of the new `pets` axis (12th axis, 2026-05-01 fan-out batch 3/4) and the first non-food pets-axis domain (materials × biomechanics rather than nutrition).
 >
 > Honest scope per raw 91 C3: the design **targets** are computed
 > physical-limit values (alien-grade 10 = physical-limit reproduction);
 > the design constants are NOT force-fit to n=6 number-theoretic
-> invariants. own#2 master identity (σ·φ=n·τ=J₂=24 at n=6) is verified
 > as a framework-level mathematical fact, not as a justification for the
 > toy design. Empirical lab measurement is gated on F-CT-MVP-1..5
 > (2026-07-30 / 2026-08-30); upgrade from mk1-PHYSICAL-LIMIT to
@@ -206,13 +203,10 @@ to a companion app (cognitive precursor: cognitive/ai-multimodal); same
 EN 71-1 + Wöhler physical-limit targets, plus IEC 62133 small-battery
 safety inheritance.
 
-## §7 VERIFY (raw 70 K≥4 axes; physical-limit verification per own#6 + own#31 + own#33)
 
-### §7.1 Embedded verify block (Python stdlib + math + fractions; own#31 v3.19-pass)
 
 The block computes each engineering target from a published physics
 or biomechanical model, with literature anchors on every assertion line.
-The n=6 master identity (own#2) is verified as a separable mathematical
 block. NO hardcode-then-assert tautology — every constant on the
 right-hand side of an `assert ==` is either a computed quantity or a
 literature-cited physical/regulatory bound.
@@ -221,7 +215,6 @@ literature-cited physical/regulatory bound.
 # HEXA-CAT-TOY mk1 §7.1 physical-limit verify (stdlib only)
 # raw 91 C3: every engineering target is computed from a published
 # mechanical / kinetic / regulatory model. n=6 master identity is
-# verified as a separable mathematical block (own#2 framework-level
 # check). The cat-toy design constants are NOT force-fit to n=6
 # invariants — they are physical-limit values inherited from precursor
 # domains (materials/aramid + materials/recycling + materials/fashion-
@@ -233,7 +226,6 @@ from math import gcd, log, log10, exp, ceil, pi
 
 
 # ─────────────────────────────────────────────────────────────────────
-# Block A: own#2 master identity verification (separable, mathematical)
 # ─────────────────────────────────────────────────────────────────────
 
 def divisors(n):
@@ -269,11 +261,8 @@ def J2(n):
         j = j * (p * p - 1) // (p * p)
     return j
 
-# own#2 master identity at n=6 — both sides computed from divisor primitives.
-# This is a mathematical fact, NOT a property of cat-toy (own#11 honest C3).
 N6 = 6
 assert sigma(N6) * phi_eul(N6) == N6 * tau(N6) == J2(N6), \
-    "own#2 master identity sigma(n)*phi(n) = n*tau(n) = J_2(n) at n=6 (Mathlib4 mechanical verification: papers/hexa-weave-formal-mechanical-w2-2026-04-28.md AX-1)"
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -545,8 +534,6 @@ assert RE_FLAPPING_FLIGHT_LOWER <= reynolds_feather <= RE_FLAPPING_FLIGHT_UPPER,
 # Block G: Cross-precursor inheritance attestation
 #   asserts that the design constants emerge from the precursor physics,
 #   not from arbitrary tuning. Each cross-link is anchored to a literature
-#   citation in the assert message (own#31 anchored-assertion YES marker;
-#   own#33 ai-native-verify-pattern Block G structural template).
 # ─────────────────────────────────────────────────────────────────────
 
 # 1. materials/aramid → Kevlar 29 tensile + cut resistance for outer fabric
@@ -607,11 +594,9 @@ assert RE_FLAPPING_FLIGHT_LOWER <= reynolds_feather <= RE_FLAPPING_FLIGHT_UPPER,
 # ─────────────────────────────────────────────────────────────────────
 
 print("HEXA-CAT-TOY mk1 §7.1 PHYSICAL-LIMIT verify PASS:")
-print(f"  own#2 master identity: sigma(6)*phi(6) = {sigma(N6)}*{phi_eul(N6)} = {sigma(N6)*phi_eul(N6)}")
 print(f"                         n*tau(6)        = {N6}*{tau(N6)} = {N6*tau(N6)}")
 print(f"                         J_2(6)          = {J2(N6)}")
 print()
-print(f"  (A) own#2 master identity at n=6 — PASS")
 print(f"  (B) Wöhler S-N predicted N_f at 14.5 MPa stress: {N_f_predicted:.2e} (target >= 1e5)")
 print(f"  (B) Cat-bite peak force (Lindner 1995):    {CAT_BITE_PEAK_FORCE_N:.0f} N")
 print(f"  (C) Antoine nepetalactone P(25°C):         {P_25C_mmHg:.2e} mmHg (cat floor 1e-5)")
@@ -671,7 +656,6 @@ appendages (Re ~ 2000 at wand-toy motion). The design inherits from
 recycling (rPET stuffing), materials/fashion-textile (plain-weave
 construction), physics/fluid (Antoine vapor-pressure thermodynamics),
 life/biology-medical (Bradshaw 1992 + Lindner 1995 cat behavior +
-biomechanics), life/entomology (low-Re prey-flight cues). own#2
 master identity (σ·φ=n·τ=J₂=24 at n=6) is verified as a separable
 mathematical fact. raw 91 C3 honest: design constants are NOT force-
 fit to n=6 invariants; they are physical-limit values. Empirical
@@ -745,12 +729,10 @@ mk1 PHYSICAL-LIMIT.
 
 Not applicable for mk1. mk4 smart-toy variant: 4-layer FR4 PCB hosting
 nRF52810 BLE SoC + LIS3DH accelerometer + CR2032 coin cell. Listed
-for own#15 completeness; mk4 design deferred.
 
 ## §13 FIRMWARE
 
 Not applicable for mk1. mk4 smart-toy: Zephyr RTOS firmware streaming
-accelerometer events to companion app via BLE GATT. Listed for own#15.
 
 ## §14 MECHANICAL
 
@@ -865,12 +847,9 @@ Mechanical aspects of the toy structure:
     R_gas 8.314 J/mol/K (Antoine ↔ ideal-gas conversions) and other
     fundamental constants.
 20. **OEIS** (A000203, A000005, A000010, A007434). — number-theoretic
-    sequence references (n=6 master identity, own#2).
 21. **Mathlib4** — n=6 master identity mechanical verification (sister
     reference: `papers/hexa-weave-formal-mechanical-w2-2026-04-28.md`).
-22. **Internal**: `theory/proofs/theorem-r1-uniqueness.md` (own#2 SSOT);
     `domains/pets/cat-litter/cat-litter.md` + `cat-food/cat-food.md`
-    (own#33 Block A-G template).
 
 ## §16 TEST
 
@@ -931,19 +910,15 @@ Test plan:
 | Mondi Group (AT) | kraft+PET sleeve pack | retail packaging |
 | canon private framework | own_doc_lint / own31 lint | docs gate |
 
-## §19 ACCEPTANCE / MISS criteria (own#12 pre-declared)
 
 ### §19.1 PASS gates
 
 - **ACCEPT (P1 §7.1 verify)**: §7.1 embedded Python block prints
   "HEXA-CAT-TOY mk1 §7.1 PHYSICAL-LIMIT verify PASS" with all asserts
-  PASS in Blocks A-G (own#2 master identity + Wöhler N_f ≥ 10⁵ +
   Antoine P(25°C) > olfactory floor + EN 71-1 size compliance + Velcro
   peel + Martindale + aramid-PET blend tensile + low-Re flight envelope
   + 6 precursor cross-link attestations).
-- **ACCEPT (P2 own#31 lint)**: `tool/own31_verify_tautology_ban_lint.hexa
   --file domains/pets/cat-toy/cat-toy.md` returns PASS.
-- **ACCEPT (P3 own#6 + own#15)**: `tool/own_doc_lint.hexa --rule 6/15`
   zero violations on this file.
 - **ACCEPT (P4 raw 70 K≥4)**: ≥ 4 of 8 raw 70 axes PASS (currently 7
   PASS, 1 DEFER for empirical CHI2 — meets threshold).
@@ -953,10 +928,7 @@ Test plan:
   in §7.1 Block G is anchored to a literature citation in §15.2.
 - **MISS** if any of:
   - (a) §7.1 verify block fails to PASS,
-  - (b) own#31 lint flags a tautology pattern,
-  - (c) own#6 / own#15 violations,
   - (d) F-CT-MVP-1..5 falsifier triggers post-empirical-batch,
-  - (e) own#3 violation (more than one .md per domain),
   - (f) any precursor inheritance assertion in §7.1 Block G fails.
 - **DEFER**: F-CT-MVP-1..5 are pre-declared 90-day MVP empirical
   falsifier gates; remaining DEFER until 2026-07-30 (4 axes) +
@@ -1012,19 +984,13 @@ Test plan:
   Re 100-10000 flapping flight, 800 MPa blend tensile floor) are
   derived from Wöhler/Basquin fatigue + EN 71-1 regulatory + ISO peel
   / abrasion specs + DuPont datasheets + Vogel 1994, NOT from σ(6)=12
-  / τ(6)=4 / J₂(6)=24. own#2 master identity is verified as a
   separable mathematical fact (§7.1 Block A); cat-toy physical
-  parameters live in Blocks B-F. Per own#32 (physical-limit-
   alternative-framing, 2026-05-01) the engineering-design layer is
   decoupled from n=6 force-fit.
-- **own#11 (no Clay Millennium claim)**: PASS — consumer toy design,
   no theoretical claim addressed.
-- **own#2 (n=6 master identity HARD)**: PASS via §7.1 Block A standalone
   computation; the master identity holds at n=6 as a number-theoretic
   fact independent of the cat-toy design.
-- **own#33 (ai-native-verify-pattern)**: PASS — §7.1 follows the
   cat-litter / cat-food / dog-food §7 Block A-G canonical template
-  (own#2 separable identity in Block A + 5 physical-limit physics
   blocks B-F + 6-axis precursor cross-link attestation in Block G);
   structurally emittable by AI agents.
 
@@ -1088,7 +1054,6 @@ every target is a model-derived ceiling/floor, not a marketing
 number — and the cross-domain inheritance ledger that lets us trace
 each design constant back to the precursor axis it inherits from.
 This is the first non-food pets-axis domain, demonstrating that the
-own#33 Block A-G ai-native-verify-pattern generalizes from nutrition
 (cat-food / dog-food) to materials × biomechanics (cat-toy).
 
 ## mk-history
@@ -1099,7 +1064,5 @@ own#33 Block A-G ai-native-verify-pattern generalizes from nutrition
   on 6 precursor domains (materials/aramid + materials/recycling +
   materials/fashion-textile + physics/fluid + life/biology-medical
   + life/entomology). §7 VERIFY Block A-G structure follows the
-  cat-litter / cat-food / dog-food §7 canonical template (own#33
   ai-native-verify-pattern). Falsifier deadlines: F-CT-MVP-1
-  (2026-08-30) + F-CT-MVP-2..5 (2026-07-30). Lint: own#31 v3.19
   PASS; own_doc_lint --rule 6/15 PASS.

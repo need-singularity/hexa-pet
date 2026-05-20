@@ -17,9 +17,6 @@
 // Root resolution: $HEXA_PET_ROOT env, else inferred from $0 dirname.
 //
 // Constraints:
-//   raw#9   — hexa-only orchestration; zero Python / external deps
-//   raw#15  — read-only (spec docs); no audit log writes
-//   raw#10  — honest C3: spec-first, working numerical impl TBD
 //
 // Cost: $0 (Mac local; pure spec substrate + placeholder dispatcher).
 //
@@ -91,11 +88,9 @@ fn _print_spec_headline(verb: str, spec_path: str) {
     println("__HEXA_PET_" + verb.to_upper() + "__ PASS")
 }
 
-// ─── caveat printer (raw#10 honest C3) ───
 
 fn _print_caveats() {
     println("")
-    println("--- caveats (raw#10 C3) ---")
     println("  1. 5/5 verbs ship as SPEC docs only at v1.0.0 — working .hexa")
     println("     numerical sandboxes are TBD per per-verb F-*-MVP-* deadlines")
     println("     (cat-litter F-CL-MVP-1 2026-07-30; cat-food F-CF-MVP-1..5")

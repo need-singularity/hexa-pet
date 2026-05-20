@@ -81,7 +81,6 @@ hexa-pet dog_food            # dog-food.md spec headline
 hexa-pet dog_toy             # dog-toy.md spec headline
 ```
 
-## Honest C3 caveats (raw#10)
 
 1. **5/5 verbs ship as SPEC docs only.** No working numerical sandbox at
    v1.0.0. CLI subcommands print the first 30 lines of each `.md` doc as a
@@ -109,7 +108,6 @@ hexa-pet dog_toy             # dog-toy.md spec headline
 
 - All 5 verb spec docs imported unchanged from
   `canon/domains/pets/` (SHA `c0f1f570`, 2026-05-06). Directory
-  slugs converted from `kebab-case` to `snake_case` per hexa-lang raw#11.
 - Sister extractions:
   - `hexa-bio` v1.0.0 — 4-verb molecular toolkit (Apache-2.0, 2026-05-04).
 - Standalone-extraction cycle: `hexa_pet_standalone_extraction_2026_05_06`.
